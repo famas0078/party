@@ -1,0 +1,9 @@
+@font-face {
+	font-family: 'SFProRounded-Bold';
+	src: url('./fonts/sfprorounded-bold.eot'); /* IE 9 Compatibility Mode */
+	src: url('./fonts/sfprorounded-bold.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+		url('./fonts/sfprorounded-bold.woff2') format('woff2'), /* Super Modern Browsers */
+		url('./fonts/sfprorounded-bold.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+		url('./fonts/sfprorounded-bold.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('./fonts/sfprorounded-bold.svg#sfprorounded-bold') format('svg'); /* Chrome < 4, Legacy iOS */
+}
