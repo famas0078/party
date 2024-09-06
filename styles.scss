@@ -12,6 +12,7 @@ $gray-circle: rgb(217, 217, 217);
   -moz-user-select: none;    /* Firefox */
   -ms-user-select: none;     /* Internet Explorer/Edge */
   user-select: none;         /* Стандартное значение */
+  animation: loading 1s ease forwards;
   .main-wrapper{
     margin: 0 auto;
     width: 100%;
@@ -166,6 +167,21 @@ $gray-circle: rgb(217, 217, 217);
         text-align: center;
       }
     }
+  }
+}
+
+/* ====================
+          animation
+  ==================== */
+
+@keyframes loading {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

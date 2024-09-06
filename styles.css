@@ -9,6 +9,7 @@
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Стандартное значение */
+  animation: loading 1s ease forwards;
 }
 .body .main-wrapper {
   margin: 0 auto;
@@ -159,6 +160,19 @@
   }
 }
 
+/* ====================
+          animation
+  ==================== */
+@keyframes loading {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 /* ====================
           font
   ==================== */
