@@ -74,8 +74,9 @@ $gray-circle: rgb(217, 217, 217);
         color: $gray-text;
       }
       .btn-join{
+        white-space: nowrap;
         font-family: "SF Pro Rounded", sans-serif;
-        background: black;
+        background: #000000;
         color: white;
         border-radius: 32px;
         padding: 10px 20px;
@@ -83,6 +84,20 @@ $gray-circle: rgb(217, 217, 217);
         &:hover{
           transition: all .3s;
           transform: translateY(-3px);
+        }
+      }
+      .input-join{
+        outline: none;
+        box-shadow: none;
+        border-radius: 32px;
+        padding: 8px 16px;
+        margin-right: 8px;
+        border: 1px solid #666666;
+        width: min(calc(100% - 8px), 180px);
+        &:focus{
+          outline: none;
+          box-shadow: none;
+          background: white;
         }
       }
       .wrapper-circles{
@@ -191,22 +206,22 @@ $gray-circle: rgb(217, 217, 217);
 
 @font-face {
   font-family: 'SFProRounded-Bold';
-  src: url('./fonts/sfprorounded-bold.eot'); /* IE 9 Compatibility Mode */
-  src: url('./fonts/sfprorounded-bold.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
-  url('./fonts/sfprorounded-bold.woff2') format('woff2'), /* Super Modern Browsers */
-  url('./fonts/sfprorounded-bold.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
-  url('./fonts/sfprorounded-bold.ttf') format('truetype'), /* Safari, Android, iOS */
-  url('./fonts/sfprorounded-bold.svg#sfprorounded-bold') format('svg'); /* Chrome < 4, Legacy iOS */
+  src: url('fonts/sfprorounded-bold.eot'); /* IE 9 Compatibility Mode */
+  src: url('fonts/sfprorounded-bold.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+  url('fonts/sfprorounded-bold.woff2') format('woff2'), /* Super Modern Browsers */
+  url('fonts/sfprorounded-bold.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+  url('fonts/sfprorounded-bold.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('fonts/sfprorounded-bold.svg#sfprorounded-bold') format('svg'); /* Chrome < 4, Legacy iOS */
 }
 
 @font-face{
   font-family: "SF Pro Rounded";
-  src: url("./fonts/sfp-middle/b10a08a79b8f11cc1ed3998a571d31dd.eot");
-  src: url("./fonts/sfp-middle/b10a08a79b8f11cc1ed3998a571d31dd.eot?#iefix")format("embedded-opentype"),
-  url("./fonts/sfp-middle/b10a08a79b8f11cc1ed3998a571d31dd.woff")format("woff"),
-  url("./fonts/sfp-middle/b10a08a79b8f11cc1ed3998a571d31dd.woff2")format("woff2"),
-  url("./fonts/sfp-middle/b10a08a79b8f11cc1ed3998a571d31dd.ttf")format("truetype"),
-  url("./fonts/sfp-middle/b10a08a79b8f11cc1ed3998a571d31dd.svg#SF Pro Rounded")format("svg");
+  src: url("fonts/sfp-middle/b10a08a79b8f11cc1ed3998a571d31dd.eot");
+  src: url("fonts/sfp-middle/b10a08a79b8f11cc1ed3998a571d31dd.eot?#iefix")format("embedded-opentype"),
+  url("fonts/sfp-middle/b10a08a79b8f11cc1ed3998a571d31dd.woff")format("woff"),
+  url("fonts/sfp-middle/b10a08a79b8f11cc1ed3998a571d31dd.woff2")format("woff2"),
+  url("fonts/sfp-middle/b10a08a79b8f11cc1ed3998a571d31dd.ttf")format("truetype"),
+  url("fonts/sfp-middle/b10a08a79b8f11cc1ed3998a571d31dd.svg#SF Pro Rounded")format("svg");
   font-weight:normal;
   font-style:normal;
   font-display:swap;
