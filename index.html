@@ -143,9 +143,15 @@
 
                 if (!email) {
                     emailInput.classList.add('error');
+                    setTimeout(() => {
+                        emailInput.classList.remove('error');
+                    }, 3000)
                     return;
                 } else if (!validateEmail(email)) {
                     emailInput.classList.add('error');
+                    setTimeout(() => {
+                        emailInput.classList.remove('error');
+                    }, 3000)
                     return;
                 } else {
                     emailInput.classList.remove('error');
