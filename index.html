@@ -33,10 +33,13 @@
                 </div>
                 <div class="d-flex flex-column justify-content-center align-items-center mt-4">
                     <div class="d-flex justify-content-center align-items-center h-100 w-100">
-                        <input class="input-join" placeholder="Join Waitlist"/>
-                        <div class="btn-join cursor-pointer">
-                            Join Party
+                        <input type="email" class="input-join" id="emailInput" placeholder="Join Waitlist"/>
+                        <div class="btn-join cursor-pointer text-center" id="joinButton">
+                            Join Waitlist
                         </div>
+                    </div>
+                    <div class="alert">
+                        Успех
                     </div>
                     <div class="wrapper-circles">
                         <div class="description my-4">
@@ -124,5 +127,55 @@
             </div>
         </div>
     </div>
+    <script type="module" src="js/config.js"></script>
+    <script type="module" src="js/api.js"></script>
+    <script type="module">
+        import { fetchPost } from './js/api.js';
+
+        document.getElementById('joinButton').addEventListener('click', async () => {
+            const button = document.getElementById('joinButton'); // Получаем кнопку
+
+            if (!button.classList.contains('loading') && !button.classList.contains('success')) {
+
+                const emailInput = document.getElementById('emailInput');
+                const email = emailInput.value.trim();
+
+
+                if (!email) {
+                    emailInput.classList.add('error');
+                    return;
+                } else if (!validateEmail(email)) {
+                    emailInput.classList.add('error');
+                    return;
+                } else {
+                    emailInput.classList.remove('error');
+                }
+
+                const result = await fetchPost(email);
+
+                button.classList.add('loading');
+
+                button.innerHTML = '<span class="spinner"></span>';
+
+                setTimeout(() => {
+                    if (result.success) {
+                        button.classList.add('success');
+                        button.classList.remove('error');
+                        button.textContent = 'Success';
+                    } else {
+                        button.classList.add('error');
+                        button.classList.remove('success');
+                        button.textContent = `Error`;
+                    }
+                    button.classList.remove('loading');
+                }, 3000);
+            }
+        });
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Регулярное выражение для проверки email
+            return re.test(String(email).toLowerCase());
+        }
+    </script>
 </body>
 </html>

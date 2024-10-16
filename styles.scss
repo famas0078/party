@@ -43,6 +43,7 @@ $gray-circle: rgb(217, 217, 217);
           }
         }
         .btn-join{
+          position: relative;
           font-family: "SF Pro Rounded", sans-serif;
           background: black;
           color: white;
@@ -52,6 +53,12 @@ $gray-circle: rgb(217, 217, 217);
           &:hover{
             transition: all .3s;
             transform: translateY(-3px);
+          }
+
+          @keyframes spin {
+            to {
+              transform: rotate(360deg);
+            }
           }
         }
       }
@@ -74,6 +81,9 @@ $gray-circle: rgb(217, 217, 217);
         color: $gray-text;
       }
       .btn-join{
+        position: relative;
+        height: 42px;
+        width: min( 100%, 120px );
         white-space: nowrap;
         font-family: "SF Pro Rounded", sans-serif;
         background: #000000;
@@ -81,9 +91,50 @@ $gray-circle: rgb(217, 217, 217);
         border-radius: 32px;
         padding: 10px 20px;
         transition: all .3s;
+        .spinner {
+          display: block;
+          width: 24px;
+          height: 24px;
+          position: absolute;
+          left: calc(50% - 12px);
+          top: calc(50% - 12px);
+          background: transparent;
+          box-sizing: border-box;
+          border-top: 4px solid white;
+          border-left: 4px solid transparent;
+          border-right: 4px solid transparent;
+          border-bottom: 4px solid transparent;
+          border-radius: 100%;
+          animation: spin 0.6s ease-out infinite;
+          opacity: 0;
+          transition: all .3s;
+        }
+        @keyframes spin {
+          100% {transform: rotate(360deg)}
+        }
         &:hover{
           transition: all .3s;
           transform: translateY(-3px);
+        }
+        &.loading {
+          border-radius: 50px;
+          width: 50px;
+          transition: all .3s;
+          .spinner{
+            opacity: 1;
+            visibility: visible;
+            transition: all .3s;
+          }
+        }
+        &.success {
+          background: #9d9d9d;
+          color: white;
+          transition: all .3s;
+        }
+        &.error {
+          background: #fb5151;
+          color: white;
+          transition: all .3s;
         }
       }
       .input-join{
@@ -92,12 +143,22 @@ $gray-circle: rgb(217, 217, 217);
         border-radius: 32px;
         padding: 8px 16px;
         margin-right: 8px;
-        border: 1px solid #666666;
+        border: 1px solid #9d9d9d;
         width: min(calc(100% - 8px), 180px);
+        transition: all .3s;
+        height: 42px;
         &:focus{
           outline: none;
           box-shadow: none;
           background: white;
+        }
+      }
+      .input-join.error{
+        border: 1px solid #fb5151;
+        transition: all .3s;
+        &::placeholder{
+          color: #fb5151;
+          transition: all .3s;
         }
       }
       .wrapper-circles{
@@ -182,6 +243,23 @@ $gray-circle: rgb(217, 217, 217);
         text-align: center;
       }
     }
+  }
+}
+
+/* ====================
+          alert
+  ==================== */
+
+.alert{
+  display: none;
+  &.error{
+    display: block;
+    background: #df3636;
+    color: white;
+  }
+  &.success{
+    display: block;
+    background: #43e628;
   }
 }
 

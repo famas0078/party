@@ -1,0 +1,5 @@
+const config = {
+    apiUrl: ' * url address * '
+}
+
+export default config;
