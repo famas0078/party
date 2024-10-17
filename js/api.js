@@ -14,8 +14,8 @@ export async function fetchPost( email ) {
         })
 
         if (!response.ok) {
-            const errorData = await response.json(); // Получаем данные ошибки
-            throw new Error(errorData.message || 'Ошибка при отправке данных'); // Генерируем ошибку с сообщением
+            const errorData = await response.json();
+            throw new Error(errorData.message || 'Ошибка при отправке данных');
         }
 
         return { success: true };

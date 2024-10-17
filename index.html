@@ -133,7 +133,7 @@
         import { fetchPost } from './js/api.js';
 
         document.getElementById('joinButton').addEventListener('click', async () => {
-            const button = document.getElementById('joinButton'); // Получаем кнопку
+            const button = document.getElementById('joinButton');
 
             if (!button.classList.contains('loading') && !button.classList.contains('success')) {
 
@@ -179,7 +179,7 @@
         });
 
         function validateEmail(email) {
-            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Регулярное выражение для проверки email
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return re.test(String(email).toLowerCase());
         }
     </script>
